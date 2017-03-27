@@ -1,0 +1,63 @@
+<html>
+<head>
+	<link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="//cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+	<script src="//cdn.bootcss.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+</head><body>
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+		<br/><br/>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+			<h2>
+				CPU
+			</h2>
+			<h4>
+				 <br/>Load：&nbsp;{{cpuload}}<br/><br/>
+				 Tasks：&nbsp;{{cputasks.running}}&nbsp;running&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{cputasks.zombie}}&nbsp;zombie
+			</h4>
+		</div>
+		<div class="col-md-4 column">
+		</div>
+		<div class="col-md-4 column">
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+		<br/><br/><br/>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-6 column">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						CPU Processes
+					</h3>
+				</div>
+				<div class="panel-footer">
+					<h4 class="panel-title">
+					 {% for title in cpuproctitle %}
+					{{title}}&nbsp;&nbsp;&nbsp;&nbsp;
+					{% endfor %}
+					</h4>
+				</div>
+				<div class="panel-body">
+				    {% for info in cpuprocinfo %}
+					    <h4>
+					    {% for val in info %}
+							{{val}}&nbsp;&nbsp;&nbsp;&nbsp;
+						{% endfor %}
+						<br/></h4>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 column">
+		</div>
+	</div>
+</div></body></html>
