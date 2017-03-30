@@ -11,10 +11,10 @@ def index():
 def index_host(hostname):
 
 	parsedata = ParseData()
-	if hostname == 'cist-PowerEdge-R730':
-		sshinfo =  { 'hostname' : '', 'hostip' : '',
-				  'port':22, 'username' : '', 'password' : '' }
-		flag_gpu = True
+
+	sshinfo = 
+	flag_gpu = 
+
 	parsedata.update_sshdata(sshinfo, flag_gpu)
 	cpu = parsedata.parse_cpudata(sshinfo)
 
@@ -29,4 +29,4 @@ def index_host(hostname):
 			cpuproctitle=cpu['process']['title'], cpuprocinfo=cpu['process']['info'])
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=5000)
+	app.run(host='', port=5000)
